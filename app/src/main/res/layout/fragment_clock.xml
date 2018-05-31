@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragment.ClockFragment"
+              android:paddingBottom="30dp"
+            android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="50dp">
+
+        <TextClock
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true"
+            android:timeZone="Asia/Tokyo"
+            android:textAlignment="center"
+            android:format12Hour="hh:mm"
+            android:format24Hour="HH:mm"
+            android:textSize="50sp"/>
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/clock"
+            android:layout_toRightOf="@+id/clock"
+            android:textSize="20sp"
+            android:textColor="@color/gray"
+            android:timeZone="Asia/Tokyo"
+            android:format12Hour="ss"
+            android:format24Hour="ss"/>
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:textSize="30sp"
+            android:timeZone="Asia/Tokyo"
+            android:format24Hour="yyyy/MM/dd (E)"
+            android:format12Hour="yyyy/MM/dd (E)"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/attendanceText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="50sp"/>
+
+            <Button
+                android:id="@+id/attendanceButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                android:text="出勤"
+                android:textSize="40sp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/leavingLayout"
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/leavingText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textSize="50sp"/>
+
+            <Button
+                android:id="@+id/leavingButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAccent"
+                android:text="退勤"
+                android:textSize="40sp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

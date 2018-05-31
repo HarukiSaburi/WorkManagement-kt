@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WorkManagement</string>
+    <string name="title_home">Clock</string>
+    <string name="title_dashboard">List</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_clock_fragment">Hello clock fragment</string>
+    <string name="hello_list_fragment">Hello list fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
