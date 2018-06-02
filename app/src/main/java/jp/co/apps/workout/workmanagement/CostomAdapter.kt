@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import jp.co.apps.workout.workmanagement.model.AttendanceModel
+import jp.co.apps.workout.workmanagement.model.LeavingModel
 import jp.co.apps.workout.workmanagement.model.WorkingTimeModel
 
 class CostomAdapter(var context: Context, var items: ArrayList<WorkingTimeModel>): BaseAdapter() {
@@ -73,13 +75,13 @@ class CostomAdapter(var context: Context, var items: ArrayList<WorkingTimeModel>
 
     fun editAttendance(index: Int, newDate: String) {
         items[index].attendance = newDate
-        MyRealm.insertAttend(items[index].date, newDate)
+        MyRealm.insert(AttendanceModel(items[index].date, newDate))
         notifyDataSetChanged()
     }
 
     fun editLeaving(index: Int, newDate: String) {
         items[index].leaving = newDate
-        MyRealm.insertLeaving(items[index].date, newDate)
+        MyRealm.insert(LeavingModel(items[index].date, newDate))
         notifyDataSetChanged()
     }
 
