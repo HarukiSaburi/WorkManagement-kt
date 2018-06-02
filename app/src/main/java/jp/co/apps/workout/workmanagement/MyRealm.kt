@@ -4,16 +4,10 @@ import io.realm.Realm
 import io.realm.RealmObject
 import jp.co.apps.workout.workmanagement.model.AttendanceModel
 import jp.co.apps.workout.workmanagement.model.LeavingModel
-import java.io.Closeable
 
 object MyRealm {
 
-    fun <T : Closeable, R> transaction(realm: T, f: (T) -> R): R {
-        realm.use {
-            return f(it)
-        }
-    }
-
+    
     fun insert(obj: RealmObject) {
         val mRealm = Realm.getDefaultInstance()
         mRealm.use {
