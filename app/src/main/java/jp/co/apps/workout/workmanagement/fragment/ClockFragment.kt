@@ -13,6 +13,8 @@ import android.widget.TextClock
 import android.widget.TextView
 import jp.co.apps.workout.workmanagement.MyRealm
 import jp.co.apps.workout.workmanagement.R
+import jp.co.apps.workout.workmanagement.model.AttendanceModel
+import jp.co.apps.workout.workmanagement.model.LeavingModel
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -46,7 +48,7 @@ class ClockFragment : Fragment() {
         attendanceButton.setOnClickListener {
             val timeStr = clock.text.toString()
             attendanceText.text = timeStr
-            MyRealm.insertAttend(today, timeStr)
+            MyRealm.insert(AttendanceModel(today, timeStr))
             it.visibility = View.INVISIBLE
             leavingLayout.visibility = View.VISIBLE
         }
@@ -57,7 +59,7 @@ class ClockFragment : Fragment() {
             cal.set(Calendar.MINUTE, minute)
             val attend = SimpleDateFormat("hh:mm", Locale.US).format(cal.time)
             attendanceText.text = attend
-            MyRealm.insertAttend(today, attend)
+            MyRealm.insert(AttendanceModel(today, attend))
         }
 
         attendanceText.setOnClickListener{
@@ -78,7 +80,7 @@ class ClockFragment : Fragment() {
         leavingButton.setOnClickListener {
             val timeStr = clock.text.toString()
             leavingText.text = timeStr
-            MyRealm.insertLeaving(today, timeStr)
+            MyRealm.insert(LeavingModel(today, timeStr))
             it.visibility = View.INVISIBLE
         }
 
@@ -88,7 +90,7 @@ class ClockFragment : Fragment() {
             cal.set(Calendar.MINUTE, minute)
             val leaving = SimpleDateFormat("hh:mm", Locale.US).format(cal.time)
             leavingText.text = leaving
-            MyRealm.insertLeaving(today, leaving)
+            MyRealm.insert(LeavingModel(today, leaving))
         }
 
         leavingText.setOnClickListener{

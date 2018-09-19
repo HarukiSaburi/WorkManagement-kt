@@ -3,7 +3,6 @@ package jp.co.apps.workout.workmanagement.activity
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
-import jp.co.apps.workout.workmanagement.MyRealm
 import jp.co.apps.workout.workmanagement.R
 import jp.co.apps.workout.workmanagement.fragment.ClockFragment
 import jp.co.apps.workout.workmanagement.fragment.ListFragment
@@ -41,9 +40,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    override fun onDestroy() {
-        super.onDestroy()
-        MyRealm.close()
-    }
 }
